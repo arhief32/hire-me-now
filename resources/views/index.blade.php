@@ -117,7 +117,7 @@
                                         <img class="img-fluid" src="{{ url('img/employer.png') }}">
                                     </div>
                                     <div class="text-center mt-4 mb-3">
-                                        <a href="#" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Register now as freelancer!</a>
+                                        <a href="#" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Register now as employer!</a>
                                     </div>
                                 </div>
                             </div>
