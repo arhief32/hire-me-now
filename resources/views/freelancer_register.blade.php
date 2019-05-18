@@ -13,7 +13,7 @@
             <div class="row">
                 <div class="col-sm-12 col-xs-12">
                     <!-- <form> -->
-                    <form action="/freelancer-register" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('freelancer-register') }}" method="POST" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group">
                             <label for="input-freelancer-name">Freelancer Name</label>
