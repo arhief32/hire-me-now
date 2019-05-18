@@ -29,3 +29,14 @@ Route::get('freelancer-dashboard','FreelancerController@dashboardFreelancer');
 Route::get('freelancer-profile','FreelancerController@getProfile');
 
 Route::get('freelancer-search-project','FreelancerController@searchProjectPage');
+
+/**
+ * EMPLOYER
+ */
+Route::get('employer-register','EmployerController@registerEmployerPage');
+Route::post('employer-register','EmployerController@registerEmployer');
+Route::get('employer-dashboard','EmployerController@dashboardEmployer');
+
+Route::get('employer-profile','EmployerController@getProfile');
+
+Route::get('employer-search-freelancer','EmployerController@searchFreelancerPage');

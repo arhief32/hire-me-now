@@ -37,8 +37,8 @@
                         <h4 class="text-success">Free Forever</h4>
                     </div>
                     <div class="live-box text-center mt-4">
-                        <a href="#">
-                            <img href="#" class="img-fluid" src="{{ url('img/employer.png') }}">
+                        <a href="{{url('employer-register')}}">
+                            <img href="{{url('employer-register')}}" class="img-fluid" src="{{ url('img/employer.png') }}">
                         </a>
                     </div>
                 </div>

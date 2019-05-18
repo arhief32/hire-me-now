@@ -48,7 +48,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top m-b-0">
             <div class="navbar-header"> <a class="navbar-toggle hidden-sm hidden-md hidden-lg " href="javascript:void(0)" data-toggle="collapse" data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-            <div class="top-left-part"><a class="logo" href="{{url('home')}}"><b><img src="{{url('plugins/images/pixeladmin-logo.png')}}" alt="home" /></b><span class="hidden-xs"><img src="{{url('img/logo159x60v1.png')}}" alt="home" /></span></a></div>
+            <div class="top-left-part">
+                <a class="logo" href="{{url('home')}}">
+                    <b>
+                        <img src="{{url('plugins/images/pixeladmin-logo.png')}}" alt="home" />
+                    </b>
+                    <span class="hidden-xs">
+                        <b>MAKARYO</b>
+                        <!-- <img src="{{url('img/logo159x60v1.png')}}" alt="home" /> -->
+                    </span>
+                </a>
+            </div>
                 <ul class="nav navbar-top-links navbar-left m-l-20 hidden-xs">
                     <li>
                         <form role="search" class="app-search hidden-xs">
@@ -61,6 +71,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         <a class="profile-pic" data-toggle="modal" data-target="#myModal">
                         @if(isset($freelancer))
                         <img src="{{url('img/image_freelancer/'.$freelancer->freelancer_photo)}}" alt="user-img" width="36" class="img-circle">
+                        @elseif(isset($employer))
+                        <img src="{{url('img/image_employer/'.$employer->employer_photo)}}" alt="user-img" width="36" class="img-circle">                        
                         @endif
                         <b class="hidden-xs">{{ Auth::user()->name }}</b> </a>
                     </li>
@@ -72,6 +84,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
         </nav>
         @if(isset($freelancer))
             @include('layouts.sidebar_freelancer')        
+        @elseif(isset($employer))
+            @include('layouts.sidebar_employer')
         @else
             @include('layouts.sidebar')
         @endif
