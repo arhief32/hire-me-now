@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Employer;
+use App\Project;
 
 class EmployerController extends Controller
 {
@@ -98,6 +99,36 @@ class EmployerController extends Controller
         ]);
     }
 
+    public function postProjectPage()
+    {
+        $employer = Employer::where('user_id', Auth::id())->first();
+        if($employer == null)
+        {
+            return redirect('employer-create-project');
+        }
+
+        $title = 'Create Project';
+        return view('employer_create_project',[
+            'title' => $title,
+            'employer' => $employer,
+        ]);   
+    }
+
+    public function postProject()
+    {
+        $employer = Employer::where('user_id', Auth::id())->first();
+        if($employer == null)
+        {
+            return redirect('employer-create-project');
+        }
+
+        $title = 'Create Project';
+        return view('employer_create_project',[
+            'title' => $title,
+            'employer' => $employer,
+        ]);   
+    }
+
     public function searchFreelancerPage()
     {
         $employer = Employer::where('user_id', Auth::id())->first();
@@ -107,7 +138,7 @@ class EmployerController extends Controller
             return redirect('employer-register');
         }
 
-        $title = 'Search Project';
+        $title = 'Search Freelancer';
         return view('employer_search_freelancer',[
             'title' => $title,
             'employer' => $employer,
