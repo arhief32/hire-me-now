@@ -6,4 +6,6 @@
             {{ session('status') }}
         </div>
     @endif
+
+    {{ $freelancer->freelancer_name }}
 @endsection

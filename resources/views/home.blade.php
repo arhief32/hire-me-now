@@ -22,7 +22,7 @@
                         <img class="img-fluid" src="{{ url('img/freelancer.png') }}">
                     </div>
                     <div class="text-center mt-4 mb-3">
-                        <a href="{{url('register-freelancer')}}" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Login as freelancer!</a>
+                        <a href="{{url('freelancer-register')}}" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Login as freelancer!</a>
                     </div>
                 </div>
             </div>

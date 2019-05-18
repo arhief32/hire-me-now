@@ -17,14 +17,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('get-list-daerah/{id}', function($id){
+Route::get('get-list-daerah/{province_id}', function($province_id){
     $curl = curl_init();
 
-    if($id == 'all')
+    if($province_id == 'all')
     {
         curl_setopt_array($curl, [
             CURLOPT_URL => "http://dev.farizdotid.com/api/daerahindonesia/provinsi",
-            CURLOPT_PROXY, "172.18.104.20:1707", 
+            // CURLOPT_PROXY, "172.18.104.20:1707", 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,
@@ -39,8 +39,8 @@ Route::get('get-list-daerah/{id}', function($id){
         ]);
     } else {
         curl_setopt_array($curl, [
-            CURLOPT_URL => "http://dev.farizdotid.com/api/daerahindonesia/provinsi/".$id."/kabupaten",
-            CURLOPT_PROXY, "172.18.104.20:1707", 
+            CURLOPT_URL => "http://dev.farizdotid.com/api/daerahindonesia/provinsi/".$province_id."/kabupaten",
+            // CURLOPT_PROXY, "172.18.104.20:1707", 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => "",
             CURLOPT_MAXREDIRS => 10,

@@ -34,8 +34,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
-   <!-- jQuery -->
-   <script src="{{url('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script> 
+    <!-- jQuery -->
+    <script src="{{url('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script> 
+    <link rel="stylesheet" href="{{url('dist/css/dropify.min.css')}}">
 </head>
 
 <body>
@@ -65,17 +66,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- /.navbar-top-links -->
             <!-- /.navbar-static-side -->
         </nav>
-        <!-- Left navbar-header -->
-        <div class="navbar-default sidebar" role="navigation">
-            <div class="sidebar-nav navbar-collapse slimscrollsidebar">
-                <ul class="nav" id="side-menu">
-                    <li style="padding: 10px 0 0;">
-                        <a href="{{url('home')}}" class="waves-effect"><i class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <!-- Left navbar-header end -->
+        @if(isset($freelancer))
+            @include('layouts.sidebar_freelancer')        
+        @else
+            @include('layouts.sidebar')
+        @endif
         <!-- Page Content -->
         <div id="page-wrapper">
             <div class="container-fluid">
@@ -85,7 +80,6 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                         <ol class="breadcrumb">
                             <li class="active"> {{$title}} </li>
-                            <!-- <li><a href="#">Dashboard</a></li> -->
                         </ol>
                     </div>
                     <!-- /.col-lg-12 -->
@@ -159,7 +153,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
     <!-- /#wrapper -->
     <!-- jQuery -->
-    <script src="{{url('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script>
+    <!-- <script src="{{url('plugins/bower_components/jquery/dist/jquery.min.js')}}"></script> -->
     <!-- Bootstrap Core JavaScript -->
     <script src="{{url('bootstrap/dist/js/bootstrap.min.js')}}"></script>
     <!-- Menu Plugin JavaScript -->
