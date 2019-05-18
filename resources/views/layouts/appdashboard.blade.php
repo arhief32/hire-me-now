@@ -58,7 +58,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 </ul>
                 <ul class="nav navbar-top-links navbar-right pull-right">
                     <li>
-                        <a class="profile-pic" data-toggle="modal" data-target="#myModal"> <img src="{{url('plugins/images/users/varun.jpg')}}" alt="user-img" width="36" class="img-circle"><b class="hidden-xs">{{ Auth::user()->name }}</b> </a>
+                        <a class="profile-pic" data-toggle="modal" data-target="#myModal">
+                        @if(isset($freelancer))
+                        <img src="{{url('img/image_freelancer/'.$freelancer->freelancer_photo)}}" alt="user-img" width="36" class="img-circle">
+                        @endif
+                        <b class="hidden-xs">{{ Auth::user()->name }}</b> </a>
                     </li>
                 </ul>
             </div>

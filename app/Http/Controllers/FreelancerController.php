@@ -21,14 +21,14 @@ class FreelancerController extends Controller
     public function dashboardFreelancer()
     {
         $freelancer = Freelancer::where('user_id', Auth::id())->first();
-        
+                
         if($freelancer == null)
         {
             return redirect('freelancer-register');
         }
 
         $title = 'Dashboard Freelancer';
-        return view('dashboard_freelancer', [
+        return view('freelancer_dashboard', [
             'title' => $title,
             'freelancer' => $freelancer,
         ]);
@@ -41,13 +41,12 @@ class FreelancerController extends Controller
         if($check_freelancer_account == null)
         {
             $title = 'Register Freelancer';
-            return view('register_freelancer', [
+            return view('freelancer_register', [
                 'title' => $title,
             ]);
         } else {
             return redirect('freelancer-dashboard');
         }
-
     }
 
     public function registerFreelancer(Request $request)
@@ -84,7 +83,7 @@ class FreelancerController extends Controller
         $insert_freelancer->user_id = $user_id;
         $insert_freelancer->freelancer_name = $freelancer_name;
         $insert_freelancer->freelancer_location = $freelancer_location;
-        $insert_freelancer->freelancer_photo = $user_id;
+        $insert_freelancer->freelancer_photo = $user_id.'.'.$freelancer_photo->getClientOriginalExtension();
         $insert_freelancer->short_description = $short_description;
         $insert_freelancer->long_description = $long_description;
         $insert_freelancer->freelancer_point = $freelancer_point;
@@ -94,5 +93,32 @@ class FreelancerController extends Controller
         $freelancer_photo->move(public_path('img/image_freelancer'), $user_id.'.'.$freelancer_photo->getClientOriginalExtension());
         
         return redirect('freelancer-dashboard');
+    }
+
+    public function getProfile()
+    {
+        $freelancer = Freelancer::where('user_id', Auth::id())->first();
+        $title = 'Profile';
+
+        return view('freelancer_profile', [
+            'title' => $title,
+            'freelancer' => $freelancer,
+        ]);
+    }
+
+    public function searchProjectPage()
+    {
+        $freelancer = Freelancer::where('user_id', Auth::id())->first();
+                
+        if($freelancer == null)
+        {
+            return redirect('freelancer-register');
+        }
+
+        $title = 'Search Project';
+        return view('freelancer_search_project',[
+            'title' => $title,
+            'freelancer' => $freelancer,
+        ]);
     }
 }

@@ -25,3 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('freelancer-register','FreelancerController@registerFreelancerPage');
 Route::post('freelancer-register','FreelancerController@registerFreelancer');
 Route::get('freelancer-dashboard','FreelancerController@dashboardFreelancer');
+
+Route::get('freelancer-profile','FreelancerController@getProfile');
+
+Route::get('freelancer-search-project','FreelancerController@searchProjectPage');

@@ -19,10 +19,9 @@
                         <h4 class="text-success">Free Forever</h4>
                     </div>
                     <div class="live-box text-center mt-4">
-                        <img class="img-fluid" src="{{ url('img/freelancer.png') }}">
-                    </div>
-                    <div class="text-center mt-4 mb-3">
-                        <a href="{{url('freelancer-register')}}" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Login as freelancer!</a>
+                        <a href="{{url('freelancer-register')}}">
+                            <img href="{{url('freelancer-register')}}" class="img-fluid" src="{{ url('img/freelancer.png') }}">
+                        </a>
                     </div>
                 </div>
             </div>
@@ -38,10 +37,9 @@
                         <h4 class="text-success">Free Forever</h4>
                     </div>
                     <div class="live-box text-center mt-4">
-                        <img class="img-fluid" src="{{ url('img/employer.png') }}">
-                    </div>
-                    <div class="text-center mt-4 mb-3">
-                        <a href="#" class="btn btn-custom btn-outline-info btn-lg" target="_blank">Login as employer!</a>
+                        <a href="#">
+                            <img href="#" class="img-fluid" src="{{ url('img/employer.png') }}">
+                        </a>
                     </div>
                 </div>
             </div>
