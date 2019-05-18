@@ -40,3 +40,5 @@ Route::get('employer-dashboard','EmployerController@dashboardEmployer');
 Route::get('employer-profile','EmployerController@getProfile');
 
 Route::get('employer-search-freelancer','EmployerController@searchFreelancerPage');
+
+Route::get('employer-create-project','EmployerController@postProjectPage');

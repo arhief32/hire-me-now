@@ -5,6 +5,9 @@
             <li style="padding: 10px 0 0;">
                 <a href="{{url('home')}}" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
             </li>
+            <div class="center p-20">
+                <span class="hide-menu"><a href="{{url('employer-create-project')}}" target="_blank" class="btn btn-danger btn-block btn-rounded waves-effect waves-light">Create New Project</a></span>
+            </div>
             <li style="padding: 10px 0 0;">
                 <a href="{{url('employer-dashboard')}}" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard Employer</span></a>
             </li>
