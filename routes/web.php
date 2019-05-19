@@ -28,7 +28,7 @@ Route::get('freelancer-dashboard','FreelancerController@dashboardFreelancer');
 
 Route::get('freelancer-profile','FreelancerController@getProfile');
 
-Route::get('freelancer-search-project','FreelancerController@searchProjectPage');
+Route::get('freelancer-search-project','ProjectController@index');
 
 /**
  * EMPLOYER
@@ -41,4 +41,5 @@ Route::get('employer-profile','EmployerController@getProfile');
 
 Route::get('employer-search-freelancer','EmployerController@searchFreelancerPage');
 
-Route::get('employer-create-project','EmployerController@postProjectPage');
+Route::get('employer-create-project','ProjectController@create');
+Route::post('employer-create-project','ProjectController@store');

@@ -5,6 +5,7 @@
             <li style="padding: 10px 0 0;">
                 <a href="{{url('home')}}" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard</span></a>
             </li>
+            <li class="nav-small-cap m-t-10">--- Freelancer Menu</li>
             <li style="padding: 10px 0 0;">
                 <a href="{{url('freelancer-dashboard')}}" class="waves-effect"><i class="fa fa-dashboard fa-fw" aria-hidden="true"></i><span class="hide-menu">Dashboard Freelancer</span></a>
             </li>
