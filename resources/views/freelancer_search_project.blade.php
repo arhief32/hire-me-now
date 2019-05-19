@@ -47,6 +47,7 @@
                         </div>
                         <div class="col-md-7 pull-right">
                             <p>{{ $row->project_detail }}</p>
+                            
                         </div>
                     </div>
                 </div>
