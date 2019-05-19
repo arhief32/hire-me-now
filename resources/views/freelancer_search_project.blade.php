@@ -15,11 +15,11 @@
                 <input type="text" id="example-input1-group2" name="search" class="form-control" placeholder="contoh : Angular JS">
                 <span class="input-group-btn"><button type="submit" class="btn waves-effect waves-light btn-info"><i class="fa fa-search"></i></button></span>
             </div>
-            @if($search != '')
-            <h3 class="m-t-40">Hasil pencarian "{{ $search }}" <small>Ada {{ count($project) }} project.</small></h3>
-            @endif
         </form>
     </div>
+        @if($search != '')
+        <h3 class="m-t-40">Hasil pencarian "{{ $search }}" <small>Ada {{ count($project) }} project.</small></h3>
+        @endif
     
     @if(count($project) == 0)
     @else

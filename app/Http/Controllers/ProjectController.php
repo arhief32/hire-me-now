@@ -115,7 +115,7 @@ class ProjectController extends Controller
         }
 
         $insert_project = new Project;
-        $insert_project->employer_id = Auth::id();
+        $insert_project->employer_id = $employer->id;
         $insert_project->project_title = $project_title;
         $insert_project->project_detail = $project_detail;
         $insert_project->project_start_date = $project_start_date;
