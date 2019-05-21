@@ -30,7 +30,7 @@
                     <div class="pull-right"><a href="#" data-perform="panel-collapse"><i class="ti-minus"></i></a> <a href="#" data-perform="panel-dismiss"><i class="ti-close"></i></a> </div>
                 </div>
                 <div class="panel-wrapper collapse in" aria-expanded="true">
-                    <div class="panel-body">
+                    <div class="panel-body" height="500">
                         <div class="col-md-5">
                             <p>Dipost oleh : <br>
                             {{ $row->employer_name }}
@@ -46,8 +46,16 @@
                             </p>
                         </div>
                         <div class="col-md-7 pull-right">
-                            <p>{{ $row->project_detail }}</p>
-                            
+                            @if(str_word_count($row->project_detail) > 20)
+                            <p>
+                            {{ implode(' ', array_slice(explode(' ', $row->project_detail), 0, 30)) }} ...</p>
+                            </p>
+                            @else
+                            <p>
+                            {{ $row->project_detail }}
+                            </p>
+                            @endif                        
+                            <button class="btn btn-block btn-info">Lihat zelengkap</button>
                         </div>
                     </div>
                 </div>
